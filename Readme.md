@@ -33,6 +33,3 @@ mvn clean package
 
 # 4. Запустите приложение
 java -jar target/wallet-service-0.0.1-SNAPSHOT.jar
-
-# Или для разработки:
-mvn spring-boot:run
