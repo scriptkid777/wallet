@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: wallet-service
+      changes:
+        - createTable:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: balance
+                  type: DECIMAL(19,4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: version
+                  type: BIGINT
+                  defaultValue: 0
+        - createIndex:
+            indexName: idx_wallets_id
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+  - changeSet:
+      id: 2
+      author: wallet-service
+      changes:
+        - sql:
+            sql: CREATE SEQUENCE IF NOT EXISTS wallets_version_seq;

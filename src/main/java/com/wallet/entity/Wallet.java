@@ -1,6 +1,5 @@
 package com.wallet.entity;
 
-import org.hibernate.annotations.Table;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import lombok.*;
@@ -9,7 +8,7 @@ import java.util.UUID;
 
 @NoArgsConstructor
 @Entity
-@Table(name = "wallet")
+@Table(name = "wallets")
 public class Wallet {
     @Id
     private UUID id;
