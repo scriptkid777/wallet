@@ -1,0 +1,13 @@
+package com.wallet.exception;
+
+import java.util.UUID;
+
+public class WalletNotFoundException extends RuntimeException {
+    public WalletNotFoundException(UUID walletId) {
+        super("Wallet with id '" + walletId + "' not found");
+    }
+
+    public WalletNotFoundException(String message) {
+        super(message);
+    }
+}
